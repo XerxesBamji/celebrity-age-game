@@ -31,12 +31,12 @@ export default function CollectionScreen({ players, collectPool, guesses, onAllD
   const [phase, setPhase] = useState('intro');      // 'intro' | 'picking' | 'done'
   const [animKey, setAnimKey] = useState(0);
 
-  const currentPlayer   = players[currentPlayerIdx];
-  const currentOrder    = playerOrders[currentPlayerIdx];
-  const currentLineup   = lineups[currentPlayerIdx];
+  const currentPlayer = players[currentPlayerIdx];
+  const currentOrder = playerOrders[currentPlayerIdx];
+  const currentLineup = lineups[currentPlayerIdx];
   const currentCelebIdx = currentOrder[seenCount];
-  const currentCeleb    = collectPool[currentCelebIdx];
-  const poolExhausted   = seenCount >= collectPool.length;
+  const currentCeleb = collectPool[currentCelebIdx];
+  const poolExhausted = seenCount >= collectPool.length;
 
   const handleAdd = () => {
     const celebObj = collectPool[currentCelebIdx];
@@ -212,8 +212,8 @@ export default function CollectionScreen({ players, collectPool, guesses, onAllD
                       background: isInLineup
                         ? 'oklch(70% 0.22 145)'
                         : i === seenCount
-                        ? 'oklch(61% 0.24 280)'
-                        : 'oklch(38% 0.03 280)',
+                          ? 'oklch(61% 0.24 280)'
+                          : 'oklch(38% 0.03 280)',
                       transition: 'all 0.2s',
                     }}
                   />
@@ -250,7 +250,7 @@ export default function CollectionScreen({ players, collectPool, guesses, onAllD
                 🛑 Stop
               </button>
             )}
-            <button
+            {/* <button
               id={`skip-btn-player-${currentPlayerIdx + 1}`}
               className="btn-ghost"
               onClick={handleSkip}
@@ -258,7 +258,7 @@ export default function CollectionScreen({ players, collectPool, guesses, onAllD
               style={{ flex: currentLineup.length === 0 ? 0 : 1, maxWidth: '140px', padding: '16px 20px' }}
             >
               Skip →
-            </button>
+            </button> */}
             <button
               id={`add-btn-player-${currentPlayerIdx + 1}`}
               className="btn-green"
