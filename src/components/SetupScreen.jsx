@@ -3,7 +3,8 @@ import { useState } from 'react';
 const MAX_PLAYERS = 6;
 const MIN_PLAYERS = 2;
 
-export default function SetupScreen({ onStart }) {
+export default function SetupScreen({ onStart, mode, onBack }) {
+  const isMalena = mode === 'malena';
   const [players, setPlayers] = useState(['', '']);
 
   const updatePlayer = (i, val) => {
@@ -35,12 +36,40 @@ export default function SetupScreen({ onStart }) {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '24px',
-        background: 'radial-gradient(ellipse at 20% 50%, oklch(28% 0.14 280 / 0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, oklch(28% 0.1 320 / 0.3) 0%, transparent 50%), oklch(12% 0.02 280)',
+        background: isMalena
+          ? 'radial-gradient(ellipse at 20% 50%, oklch(25% 0.12 220 / 0.5) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, oklch(20% 0.08 220 / 0.3) 0%, transparent 50%), oklch(12% 0.02 280)'
+          : 'radial-gradient(ellipse at 20% 50%, oklch(28% 0.14 280 / 0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, oklch(28% 0.1 320 / 0.3) 0%, transparent 50%), oklch(12% 0.02 280)',
       }}
     >
+      {/* Back button */}
+      {onBack && (
+        <button
+          id="back-to-mode-btn"
+          onClick={onBack}
+          style={{
+            position: 'absolute',
+            top: '20px',
+            left: '20px',
+            background: 'oklch(100% 0 0 / 0.07)',
+            border: '1px solid oklch(100% 0 0 / 0.12)',
+            color: 'oklch(70% 0.04 280)',
+            borderRadius: '10px',
+            padding: '8px 14px',
+            cursor: 'pointer',
+            fontSize: '0.85rem',
+            fontFamily: 'var(--font-sans)',
+            transition: 'background 0.15s ease, color 0.15s ease',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'oklch(100% 0 0 / 0.12)'; e.currentTarget.style.color = 'white'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'oklch(100% 0 0 / 0.07)'; e.currentTarget.style.color = 'oklch(70% 0.04 280)'; }}
+        >
+          ← Editions
+        </button>
+      )}
+
       {/* Hero */}
       <div className="animate-fadeInUp" style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <div style={{ fontSize: '4rem', marginBottom: '12px' }}>🎬</div>
+        <div style={{ fontSize: '4rem', marginBottom: '12px' }}>{isMalena ? '🇦🇷' : '🎬'}</div>
         <h1
           style={{
             fontFamily: 'var(--font-display)',
@@ -50,12 +79,24 @@ export default function SetupScreen({ onStart }) {
             lineHeight: 1.1,
           }}
         >
-          <span className="text-gradient">Celebrity</span>
-          <br />
-          <span style={{ color: 'white' }}>Age Game</span>
+          {isMalena ? (
+            <>
+              <span className="text-gradient-arg">Malena</span>
+              <br />
+              <span style={{ color: 'white' }}>Edition 🤍</span>
+            </>
+          ) : (
+            <>
+              <span className="text-gradient">Celebrity</span>
+              <br />
+              <span style={{ color: 'white' }}>Age Game</span>
+            </>
+          )}
         </h1>
-        <p style={{ color: 'oklch(70% 0.05 280)', marginTop: '12px', fontSize: '1.05rem' }}>
-          Guess the combined ages. Build your lineup. Win the round. 🏆
+        <p style={{ color: isMalena ? 'oklch(78% 0.1 220)' : 'oklch(70% 0.05 280)', marginTop: '12px', fontSize: '1.05rem' }}>
+          {isMalena
+            ? 'Celebrities 100% argentinos. ¡Vamos Argentina! 🏆'
+            : 'Guess the combined ages. Build your lineup. Win the round. 🏆'}
         </p>
       </div>
 
@@ -158,12 +199,20 @@ export default function SetupScreen({ onStart }) {
 
         <button
           id="start-game-btn"
-          className="btn-primary animate-pulse-glow"
+          className={isMalena ? 'btn-primary animate-pulse-glow-arg' : 'btn-primary animate-pulse-glow'}
           onClick={handleStart}
           disabled={!canStart}
-          style={{ width: '100%', marginTop: '20px', fontSize: '1.1rem', padding: '16px' }}
+          style={{
+            width: '100%',
+            marginTop: '20px',
+            fontSize: '1.1rem',
+            padding: '16px',
+            background: isMalena
+              ? 'linear-gradient(135deg, oklch(72% 0.18 220), oklch(92% 0.05 220))'
+              : undefined,
+          }}
         >
-          Start Game 🚀
+          {isMalena ? '¡Jugar! 🇦🇷' : 'Start Game 🚀'}
         </button>
       </div>
 
@@ -175,7 +224,9 @@ export default function SetupScreen({ onStart }) {
           textAlign: 'center',
         }}
       >
-        2–6 players · Pass the screen around · Ages pulled from Wikipedia
+        {isMalena
+          ? '2–6 jugadores · Pasen el teléfono · Edades de Wikipedia'
+          : '2–6 players · Pass the screen around · Ages pulled from Wikipedia'}
       </p>
     </div>
   );

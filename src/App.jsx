@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { CELEBRITY_POOL } from './data/celebrities';
+import { CELEBRITY_POOL, ARGENTINA_POOL } from './data/celebrities';
 import { pickRandom } from './utils/gameLogic';
 import { useCelebrityData } from './hooks/useCelebrityData';
+import ModeSelectScreen from './components/ModeSelectScreen';
 import SetupScreen from './components/SetupScreen';
 import GuessScreen from './components/GuessScreen';
 import CollectionScreen from './components/CollectionScreen';
 import RevealScreen from './components/RevealScreen';
 
 const PHASE = {
+  MODE_SELECT: 'mode_select',
   SETUP: 'setup',
   GUESS: 'guess',
   COLLECT: 'collect',
@@ -15,11 +17,32 @@ const PHASE = {
 };
 
 /**
- * App shell — increments gameKey to fully remount the game with fresh celebrities.
+ * App shell — shows mode selection, then increments gameKey to fully remount
+ * the game with fresh celebrities on Play Again.
  */
 export default function App() {
   const [gameKey, setGameKey] = useState(0);
-  return <GameInstance key={gameKey} onPlayAgain={() => setGameKey((k) => k + 1)} />;
+  const [selectedMode, setSelectedMode] = useState(null); // 'classic' | 'malena'
+
+  if (!selectedMode) {
+    return (
+      <ModeSelectScreen
+        onSelectMode={(mode) => setSelectedMode(mode)}
+      />
+    );
+  }
+
+  const pool = selectedMode === 'malena' ? ARGENTINA_POOL : CELEBRITY_POOL;
+
+  return (
+    <GameInstance
+      key={gameKey}
+      pool={pool}
+      mode={selectedMode}
+      onPlayAgain={() => setGameKey((k) => k + 1)}
+      onChangeMode={() => setSelectedMode(null)}
+    />
+  );
 }
 
 /**
@@ -30,12 +53,12 @@ export default function App() {
  *  - collectPool (12) → shown one-at-a-time in CollectionScreen. Different from the 4 above.
  *                       Each player can keep adding as many as they like until they stop.
  */
-function GameInstance({ onPlayAgain }) {
+function GameInstance({ pool, mode, onPlayAgain, onChangeMode }) {
   // Pick celebrities fresh on every mount — guaranteed different each game
-  const [guessCelebs] = useState(() => pickRandom(CELEBRITY_POOL, 4));
+  const [guessCelebs] = useState(() => pickRandom(pool, 4));
   const [collectPool] = useState(() => {
     const guessIds = new Set(guessCelebs.map((c) => c.id));
-    const remaining = CELEBRITY_POOL.filter((c) => !guessIds.has(c.id));
+    const remaining = pool.filter((c) => !guessIds.has(c.id));
     return pickRandom(remaining, Math.min(12, remaining.length));
   });
 
@@ -53,6 +76,8 @@ function GameInstance({ onPlayAgain }) {
     case PHASE.SETUP:
       return (
         <SetupScreen
+          mode={mode}
+          onBack={onChangeMode}
           onStart={(names) => {
             setPlayers(names);
             setPhase(PHASE.GUESS);
@@ -100,3 +125,4 @@ function GameInstance({ onPlayAgain }) {
       return null;
   }
 }
+

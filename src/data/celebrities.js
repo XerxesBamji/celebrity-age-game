@@ -203,3 +203,87 @@ export const CELEBRITY_POOL = [
   { id: 'Q10993',   name: 'Tiger Woods',        wikiTitle: 'Tiger_Woods',        dob: '1975-12-30' },
   { id: 'Q5284',    name: 'Bill Gates',         wikiTitle: 'Bill_Gates',         dob: '1955-10-28' },
 ];
+
+/**
+ * Malena Edition — Argentina-only pool.
+ * Covers football, music, acting, TV, and digital/podcast personalities.
+ */
+export const ARGENTINA_POOL = [
+  // ─── FOOTBALL — Legends ────────────────────────────────────────────────────
+  { id: 'Q726',      name: 'Gabriel Batistuta',      wikiTitle: 'Gabriel_Batistuta',             dob: '1969-02-01' },
+  { id: 'Q216602',   name: 'Javier Mascherano',      wikiTitle: 'Javier_Mascherano',             dob: '1984-06-08' },
+  { id: 'Q38993',    name: 'Sergio Agüero',           wikiTitle: 'Sergio_Agüero',                dob: '1988-06-02' },
+  { id: 'Q211025',   name: 'Carlos Tevez',            wikiTitle: 'Carlos_Tevez',                 dob: '1984-02-05' },
+  { id: 'Q201485',   name: 'Fernando Gago',           wikiTitle: 'Fernando_Gago',                dob: '1986-04-10' },
+  { id: 'Q18223',    name: 'Pablo Aimar',             wikiTitle: 'Pablo_Aimar',                  dob: '1979-11-03' },
+  { id: 'Q57398',    name: 'Maximiliano Rodríguez',   wikiTitle: 'Maximiliano_Rodríguez',         dob: '1981-01-02' },
+  { id: 'Q131259',   name: 'Ángel Di María',          wikiTitle: 'Ángel_Di_María',               dob: '1988-02-14' },
+
+  // ─── FOOTBALL — 2026 World Cup Squad ───────────────────────────────────────
+  { id: 'Q11579',    name: 'Lionel Messi',            wikiTitle: 'Lionel_Messi',                 dob: '1987-06-24' },
+  { id: 'Q19603696', name: 'Emiliano Martínez',       wikiTitle: 'Emiliano_Martínez_(footballer)', dob: '1992-09-02' },
+  { id: 'Q337155',   name: 'Juan Musso',              wikiTitle: 'Juan_Musso',                   dob: '1994-05-06' },
+  { id: 'Q1210401',  name: 'Gerónimo Rulli',          wikiTitle: 'Gerónimo_Rulli',               dob: '1992-05-07' },
+  { id: 'Q558836',   name: 'Nicolás Otamendi',        wikiTitle: 'Nicolás_Otamendi',             dob: '1988-02-12' },
+  { id: 'Q21036283', name: 'Lisandro Martínez',       wikiTitle: 'Lisandro_Martínez',            dob: '1998-01-18' },
+  { id: 'Q21036284', name: 'Cristian Romero',         wikiTitle: 'Cristian_Romero_(footballer)', dob: '1998-04-27' },
+  { id: 'Q17494477', name: 'Nicolás Tagliafico',      wikiTitle: 'Nicolás_Tagliafico',           dob: '1992-08-31' },
+  { id: 'Q22270626', name: 'Gonzalo Montiel',         wikiTitle: 'Gonzalo_Montiel',              dob: '1997-01-01' },
+  { id: 'Q21058271', name: 'Leonardo Balerdi',        wikiTitle: 'Leonardo_Balerdi',             dob: '1999-01-26' },
+  { id: 'Q18189537', name: 'Rodrigo De Paul',         wikiTitle: 'Rodrigo_De_Paul',              dob: '1994-05-24' },
+  { id: 'Q21007671', name: 'Alexis Mac Allister',     wikiTitle: 'Alexis_Mac_Allister',          dob: '1998-12-24' },
+  { id: 'Q111625226',name: 'Enzo Fernández',          wikiTitle: 'Enzo_Fernández',               dob: '2001-01-17' },
+  { id: 'Q17494398', name: 'Leandro Paredes',         wikiTitle: 'Leandro_Paredes',              dob: '1994-06-29' },
+  { id: 'Q26270820', name: 'Giovani Lo Celso',        wikiTitle: 'Giovani_Lo_Celso',             dob: '1996-04-09' },
+  { id: 'Q55799953', name: 'Thiago Almada',           wikiTitle: 'Thiago_Almada',                dob: '2001-04-16' },
+  { id: 'Q27508985', name: 'Exequiel Palacios',       wikiTitle: 'Exequiel_Palacios',            dob: '1998-10-05' },
+  { id: 'Q24039201', name: 'Lautaro Martínez',        wikiTitle: 'Lautaro_Martínez',             dob: '1997-08-22' },
+  { id: 'Q55800274', name: 'Julián Álvarez',          wikiTitle: 'Julián_Álvarez',               dob: '2000-01-31' },
+  { id: 'Q21023408', name: 'Ángel Correa',            wikiTitle: 'Ángel_Correa_(footballer)',    dob: '1995-03-09' },
+  { id: 'Q18406272', name: 'Nicolás González',        wikiTitle: 'Nicolás_González_(footballer)', dob: '1998-04-06' },
+
+  // ─── MUSIC ─────────────────────────────────────────────────────────────────
+  { id: 'Q1757133',  name: 'Lali Espósito',          wikiTitle: 'Lali_Espósito',             dob: '1991-10-10' },
+  { id: 'Q105622660',name: 'Bizarrap',               wikiTitle: 'Bizarrap',                  dob: '1998-08-29' },
+  { id: 'Q21034280', name: 'Tini Stoessel',          wikiTitle: 'Martina_Stoessel',          dob: '2002-03-22' },
+  { id: 'Q99424048', name: 'María Becerra',          wikiTitle: 'María_Becerra',             dob: '2000-02-12' },
+  { id: 'Q96380558', name: 'Nicki Nicole',           wikiTitle: 'Nicki_Nicole',              dob: '2000-06-25' },
+  { id: 'Q55800341', name: 'Paulo Londra',           wikiTitle: 'Paulo_Londra',              dob: '1998-04-12' },
+  { id: 'Q55800340', name: 'Duki',                   wikiTitle: 'Duki_(rapper)',             dob: '1996-01-25' },
+  { id: 'Q64055430', name: 'Wos',                    wikiTitle: 'Wos_(rapper)',              dob: '1999-06-07' },
+  { id: 'Q313870',   name: 'Fito Páez',              wikiTitle: 'Fito_Páez',                 dob: '1963-03-13' },
+  { id: 'Q202906',   name: 'Gustavo Cerati',         wikiTitle: 'Gustavo_Cerati',            dob: '1959-08-11' },
+  { id: 'Q209165',   name: 'Mercedes Sosa',          wikiTitle: 'Mercedes_Sosa',             dob: '1935-07-09' },
+  { id: 'Q3282052',  name: 'Abel Pintos',            wikiTitle: 'Abel_Pintos',               dob: '1984-11-11' },
+  { id: 'Q2050552',  name: 'Soledad Pastorutti',     wikiTitle: 'Soledad_Pastorutti',        dob: '1980-02-08' },
+  // New-wave urban / pop
+  { id: 'arg-luckra',    name: 'Luck Ra',            wikiTitle: 'Luck_Ra',                   dob: '2001-09-10' },
+  { id: 'arg-tiagopzk',  name: 'Tiago PZK',          wikiTitle: 'Tiago_PZK',                 dob: '2001-05-16' },
+  { id: 'arg-angelat',   name: 'Ángela Torres',      wikiTitle: 'Ángela_Torres',             dob: '1999-05-25' },
+  { id: 'arg-emilia',    name: 'Emilia Mernes',      wikiTitle: 'Emilia_Mernes',             dob: '1996-12-22' },
+  { id: 'arg-rusher',    name: 'Rusherking',          wikiTitle: 'Rusherking',                dob: '2001-01-28' },
+  { id: 'arg-lgante',    name: 'L-Gante',            wikiTitle: 'L-Gante',                   dob: '2000-01-07' },
+  { id: 'arg-cazzu',     name: 'Cazzu',              wikiTitle: 'Cazzu',                     dob: '1997-03-02' },
+  { id: 'arg-khea',      name: 'Khea',               wikiTitle: 'Khea',                      dob: '1999-08-07' },
+
+  // ─── ACTORS / TV ───────────────────────────────────────────────────────────
+  { id: 'Q214889',   name: 'Ricardo Darín',          wikiTitle: 'Ricardo_Darín',             dob: '1957-01-16' },
+  { id: 'Q2316737',  name: 'Guillermo Francella',    wikiTitle: 'Guillermo_Francella',       dob: '1955-11-29' },
+  { id: 'Q1397403',  name: 'Florencia Peña',         wikiTitle: 'Florencia_Peña',            dob: '1975-08-14' },
+  { id: 'Q2007478',  name: 'Adrián Suar',            wikiTitle: 'Adrián_Suar',               dob: '1968-05-20' },
+  { id: 'Q1376396',  name: 'Natalia Oreiro',         wikiTitle: 'Natalia_Oreiro',            dob: '1977-05-19' },
+  { id: 'Q233155',   name: 'Luisana Lopilato',       wikiTitle: 'Luisana_Lopilato',          dob: '1987-05-18' },
+  { id: 'Q20810844', name: 'Anya Taylor-Joy',        wikiTitle: 'Anya_Taylor-Joy',           dob: '1996-04-16' },
+  { id: 'Q1387466',  name: 'Celeste Cid',            wikiTitle: 'Celeste_Cid',               dob: '1982-03-25' },
+  { id: 'Q845854',   name: 'Benjamín Vicuña',        wikiTitle: 'Benjamín_Vicuña',           dob: '1978-04-09' },
+
+  // ─── INFLUENCERS / PODCAST / DIGITAL ───────────────────────────────────────
+  { id: 'arg-occhiato', name: 'Nicolás Occhiato',   wikiTitle: 'Nicolás_Occhiato',          dob: '1993-06-26' },
+  { id: 'arg-luquitas', name: 'Luquitas Rodríguez', wikiTitle: 'Luquitas_Rodríguez',        dob: '1997-03-10' },
+  { id: 'arg-natijota', name: 'Nati Jota',           wikiTitle: 'Nati_Jota',                 dob: '1996-04-05' },
+  { id: 'arg-coscu',    name: 'Coscu',               wikiTitle: 'Coscu',                     dob: '1994-03-15' },
+  { id: 'arg-fran',     name: 'Agustín Franzoni',    wikiTitle: 'Agustín_Franzoni',          dob: '2000-09-01' },
+  { id: 'arg-martina',  name: 'Martina Peroni',      wikiTitle: 'Martina_Peroni',            dob: '2001-01-22' },
+  { id: 'arg-juariu',   name: 'Juariu',              wikiTitle: 'Juariu',                    dob: '1989-07-14' },
+];
+

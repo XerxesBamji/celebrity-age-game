@@ -27,6 +27,11 @@
 
   --color-green-game: oklch(70% 0.22 145);
   --color-red-game: oklch(65% 0.22 25);
+
+  /* Argentine flag — Malena Edition */
+  --color-celeste-400: oklch(78% 0.15 220);
+  --color-celeste-500: oklch(72% 0.18 220);
+  --color-celeste-600: oklch(62% 0.2 220);
 }
 
 *, *::before, *::after {
@@ -107,6 +112,15 @@ body {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+@keyframes pulse-glow-arg {
+  0%, 100% { box-shadow: 0 0 20px oklch(72% 0.18 220 / 0.4); }
+  50%       { box-shadow: 0 0 40px oklch(72% 0.18 220 / 0.8); }
+}
+
+.animate-pulse-glow-arg {
+  animation: pulse-glow-arg 2s ease-in-out infinite;
+}
+
 .animate-bounce-in {
   animation: bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
@@ -153,6 +167,14 @@ body {
 
 .text-gradient-brand {
   background: linear-gradient(135deg, oklch(79% 0.16 280), oklch(79% 0.16 320));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Malena Edition — Argentine celeste gradient text */
+.text-gradient-arg {
+  background: linear-gradient(135deg, oklch(78% 0.15 220), oklch(92% 0.05 220));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
